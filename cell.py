@@ -1,7 +1,7 @@
 from graphics import Line, Point
 
 class Cell:
-    def __init__(self, win):
+    def __init__(self, win = None):
         self.has_left_wall = True
         self.has_right_wall = True
         self.has_top_wall = True
@@ -14,6 +14,8 @@ class Cell:
         self._win = win
 
     def draw(self, x1, y1, x2, y2):
+        if self._win is None:
+            return
         self._x1 = x1
         self._x2 = x2
         self._y1 = y1
@@ -40,6 +42,8 @@ class Cell:
     therefore it is guaranteed that the two relative point centers are connected
     """
     def draw_move(self, to_cell, undo = False):
+        if self._win is None:
+            return
         x_mid = (self._x1 + self._x2) / 2
         y_mid = (self._y1 + self._y2) / 2
 
