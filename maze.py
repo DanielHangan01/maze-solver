@@ -48,7 +48,7 @@ class Maze:
         if self._win is None:
             return
         self._win.redraw()
-        time.sleep(0.005)
+        time.sleep(0.00005)
 
     def _break_entrance_and_exit(self):
         if self._start_x != 0 and self._start_x != self._num_cols - 1 and self._start_y != 0 and self._start_y != self._num_rows - 1:
